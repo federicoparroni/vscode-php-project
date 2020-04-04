@@ -1,0 +1,117 @@
+{
+	"name": "php-project",
+	"displayName": "PHP Project",
+	"description": "Serves current project or selected directory as a root directory for PHP server.",
+	"version": "2.2.0",
+	"publisher": "fedeparro",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/FrogTheFrog/vscode-php-project.git"
+	},
+	"icon": "images/logo.png",
+	"engines": {
+		"vscode": "^1.5.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.startDefaultServer",
+		"onCommand:extension.startRelativeServer",
+		"onCommand:extension.stopServer"
+	],
+	"main": "./out/src/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.startDefaultServer",
+				"title": "Start PHP server",
+				"icon": "./images/start.png"
+			},
+			{
+				"command": "extension.startRelativeServer",
+				"title": "Start PHP server at current directory"
+			},
+			{
+				"command": "extension.stopServer",
+				"title": "Stop PHP server",
+				"icon": "./images/stop.png"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "PHP Project configuration",
+			"properties": {
+				"php-project.args": {
+					"type": "array",
+					"default": [
+						"-S",
+						"localhost:3000"
+					],
+					"items": {
+						"type": "string"
+					},
+					"description": "Arguments for PHP server. Can support VSCODE and ${cwd} variables. Arguments must be of type string, otherwise they will be skipped"
+				},
+				"php-project.defaultDirectory": {
+					"type": "string",
+					"default": "${workspaceRoot}",
+					"description": "Directory to use as root for PHP server"
+				},
+				"php-project.executablePath": {
+					"type": "string",
+					"default": null,
+					"description": "Path to executable used to lauch PHP server"
+				},
+				"php-project.useNativeExecutablePath": {
+					"type": "boolean",
+					"default": true,
+					"description": "Uses \"php.validate.executablePath\" or \"php.validate.executablePath\" as executable path"
+				},
+				"php-project.automaticRestart": {
+					"type": "boolean",
+					"default": false,
+					"description": "Automatically terminate server and start a new one when user tries to start new instance without closing current one"
+				},
+				"php-project.launchOutputTemplate": {
+					"type": "string",
+					"default": "PHP server running with ${cwd} as root directory. Reach server using localhost:3000",
+					"description": "Customize output at PHP server launch. Supports VSCODE, ${cwd}, ${args} and ${debug} variables"
+				}
+			}
+		},
+		"menus": {
+			"editor/context": [
+				{
+					"command": "extension.startRelativeServer",
+					"group": "phpServer"
+				}
+			],
+			"editor/title": [
+				{
+					"command": "extension.startDefaultServer",
+					"group": "navigation"
+				},
+				{
+					"command": "extension.stopServer",
+					"group": "navigation"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "tsc -p ./",
+		"compile": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"devDependencies": {
+		"typescript": "^2.5.2",
+		"vscode": "^1.1.5",
+		"@types/node": "^8.0.28"
+	},
+	"__metadata": {
+		"id": "6fdae6c1-49fc-42a7-82ea-96dd770d01a5",
+		"publisherId": "585da97c-431d-4a7c-a12c-48dfcff80fbd",
+		"publisherDisplayName": "FrogTheFrog"
+	}
+}
