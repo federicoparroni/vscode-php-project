@@ -6,7 +6,7 @@
 	"publisher": "fedeparro",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/FrogTheFrog/vscode-php-project.git"
+		"url": "https://github.com/keyblade95/vscode-php-project.git"
 	},
 	"icon": "images/logo.png",
 	"engines": {
