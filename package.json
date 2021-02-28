@@ -26,7 +26,10 @@
 			{
 				"command": "extension.startDefaultServer",
 				"title": "Start PHP server",
-				"icon": "./images/start.png"
+				"icon": {
+          "light": "./images/light/php-start.svg",
+          "dark": "./images/dark/php-start.svg"
+        }
 			},
 			{
 				"command": "extension.startRelativeServer",
@@ -35,7 +38,10 @@
 			{
 				"command": "extension.stopServer",
 				"title": "Stop PHP server",
-				"icon": "./images/stop.png"
+				"icon": {
+          "light": "./images/light/php-stop.svg",
+          "dark": "./images/dark/php-stop.svg"
+        }
 			}
 		],
 		"configuration": {
