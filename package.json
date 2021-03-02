@@ -2,7 +2,7 @@
 	"name": "php-project",
 	"displayName": "PHP Project",
 	"description": "Serves current project or selected directory as a root directory for PHP server.",
-	"version": "2.2.0",
+	"version": "2.3.0",
 	"publisher": "fedeparro",
 	"repository": {
 		"type": "git",
@@ -27,9 +27,9 @@
 				"command": "extension.startDefaultServer",
 				"title": "Start PHP server",
 				"icon": {
-          "light": "./images/light/php-start.svg",
-          "dark": "./images/dark/php-start.svg"
-        }
+					"light": "./images/light/php-start.svg",
+					"dark": "./images/dark/php-start.svg"
+				}
 			},
 			{
 				"command": "extension.startRelativeServer",
@@ -39,9 +39,9 @@
 				"command": "extension.stopServer",
 				"title": "Stop PHP server",
 				"icon": {
-          "light": "./images/light/php-stop.svg",
-          "dark": "./images/dark/php-stop.svg"
-        }
+					"light": "./images/light/php-stop.svg",
+					"dark": "./images/dark/php-stop.svg"
+				}
 			}
 		],
 		"configuration": {
@@ -114,10 +114,5 @@
 		"@types/node": "^8.0.28",
 		"typescript": "^2.5.2",
 		"vscode": "^1.1.36"
-	},
-	"__metadata": {
-		"id": "6fdae6c1-49fc-42a7-82ea-96dd770d01a5",
-		"publisherId": "585da97c-431d-4a7c-a12c-48dfcff80fbd",
-		"publisherDisplayName": "FrogTheFrog"
 	}
 }
