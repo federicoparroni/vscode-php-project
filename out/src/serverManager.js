@@ -157,8 +157,10 @@ class ServerManager {
         }
         else {
             executablePath = this.configManager.get('php-project').get('executablePath');
-            if (executablePath == undefined)
-                vscode.window.showErrorMessage('"php-project.executablePath" is not set.');
+            if (executablePath == undefined) {
+                vscode.window.showWarningMessage('"php-project.executablePath" is not set. Defaulting to system path.');
+                executablePath = this.resolvePath('php');
+            }
             else {
                 executablePath = this.resolvePath(executablePath);
                 if (executablePath == undefined)
